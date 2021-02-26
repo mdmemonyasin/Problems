@@ -18,11 +18,14 @@ int main(){
     //         }
     //     }
     // }
-
+    // int ans = 0;
     // for(int i=1;i<=n;i++){
-    //     cout<<state[i]<<" ";
+    //     if(state[i]){
+    //         ans++;    
+    //     }
+    //     // cout<<state[i]<<" ";
     // }
-    int n = sqrt(n);
-    cout << n;
+    int ans = sqrt(n);
+    cout << ans;
 
 }
