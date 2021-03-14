@@ -1,19 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printSubset(int arr[], int n, int i,int curr[], int j){
-    if(i >= n){
-        for(int j=0;j<n;j++){
-            cout<<curr[i]<<" ";       
+void printAllSubSet(int arr[], int i, int n, int temp[], int size){
+    if(i==n){
+        for(int j=0;j<size;j++){
+            cout<<temp[j]<<" ";
         }
         cout<<endl;
         return;
     }
-    printSubset(arr, n, i+1, curr, j);
-    curr[j] = arr[i];
-    printSubset(arr, n, i+1,, j++);
-    
+    temp[size] = arr[i];
+    printAllSubSet(arr, i+1, n, temp, size+1);
+    printAllSubSet(arr, i+1, n, temp, size);
 }
+
 
 int main(){
     int n;
@@ -22,6 +22,6 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    int curr[n];
-    printSubset(arr, n, 0, curr, 0);
+    int temp[n];
+    printAllSubSet(arr, 0, n, temp, 0);
 }
