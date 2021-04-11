@@ -8,10 +8,10 @@ using namespace std;
 #define RUN 1 
 
 // Define the range of the test data generated 
-#define MAX 100 
+#define MAX 1000000000
 
 // Define the maximum number of array elements 
-#define MAXNUM 1000000 
+#define MAXNUM 200000 
 
 int main() 
 { 
