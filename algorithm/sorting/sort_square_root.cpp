@@ -19,7 +19,7 @@ int main(){
     if(i>0){
         j = i-1;
     }
-    cout<<i<<" "<<j<<endl;
+
     for(;i<arr.size()&&j>=0;){
         if(arr[i] * arr[i] < arr[j] * arr[j]){
             ans.push_back(arr[i] * arr[i]);
@@ -29,6 +29,7 @@ int main(){
             j--;
         }
     }
+    
     while(i<n){
         ans.push_back(arr[i] * arr[i]);
         i++;

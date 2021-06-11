@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    string o1 = "23";
-    string o2 = "16";
-    int a = o2.compare(o1);
-    cout<<a;
+    double a = 6;
+    double b = 3;
+    cout<< ceil ((10 - a) / b);
 }
