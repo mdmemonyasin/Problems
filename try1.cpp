@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    cout<<__gcd(0,0);
+    string s = "yasin";
+    cout<<s.substr(0, 0)<<endl;
+    cout<<s.substr(0)<<endl;
 }

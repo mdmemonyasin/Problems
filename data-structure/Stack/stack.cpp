@@ -7,8 +7,8 @@ class Stack {
     int top;
     public:
     Stack(int c){
-        a = new int[capacity];
         capacity = c;
+        a = new int[capacity];
         top = -1;
     }
     void push(int d){
@@ -41,10 +41,10 @@ class Stack {
 
 int main(){
     Stack s1 = Stack(10);
-    // s1.push(1);
-    // s1.push(2);
-    // s1.push(3);
-    // cout<<s1.size()<<endl;
+    s1.push(1);
+    s1.push(2);
+    s1.push(3);
+    cout<<s1.size()<<endl;
     // cout<<s1.pop()<<endl;
     cout<<s1.isEmpty()<<endl;
 }
