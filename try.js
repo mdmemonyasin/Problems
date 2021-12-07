@@ -1,74 +1,24 @@
-const facebookProfiles = [
-  {
-    firstName: 'Akash',
-    lastName: 'Agarwal',
-    number: '111111111',
-    likes: ['music', 'movies'],
-    hasDrivingLicense: false,
-    address: {
-      location: 'rampur',
-      state: 'up',
-    },
-    emails: ['abc@outlook.com', 'efg@gamil.com', 'ghj@gmail.com']
+async function (req, res) { 
+  try {
 
-  },
-  {
-    firstName: 'Pritesh',
-    lastName: 'Kumar',
-    number: '222222222',
-    likes: ['code', 'driving'],
-    hasDrivingLicense: false,
-    address: {
-      location: 'gurgaon',
-      state: 'haryana',
-    },
-    emails: ['fgdfg@gmail.com']
+      let cities=  ["Bengaluru","Mumbai", "Delhi", "Kolkata", "Chennai", "London", "Moscow"]
+      let cityObjArray=[]
+      //better to use for..of here
+      for (i=0 ;i<cities.length; i++){
+          let obj= {city:cities[i]}
+          let resp=  await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city[i]}&appid=f9e638fb1f1d3bf0f0f17434387c9ddc`)
+          console.log(resp.data.main.temp)
+          obj.temp=resp.data.main.temp
+          cityObjArray.push(obj)
+      }
 
-  },
-  {
-    firstName: 'Sabiha',
-    lastName: 'Khan',
-    number: '333333333',
-    hasDrivingLicense: false,
-    address: {
-      location: 'lucknow',
-      state: 'up',
-    },
-
-  },
-  {
-    firstName: 'Suyash',
-    lastName: 'Kashyap',
-    number: '444444444',
-    likes: ['travel', 'driving'],
-    hasDrivingLicense: true,
-    address: {
-      location: 'alwar',
-      state: 'rajasthan',
-    },
-    emails: ['abc@yahoo.com']
-
-  },
-  {
-    firstName: 'Jay',
-    likes: ['food', 'mobile'],
-    hasDrivingLicense: true,
-    address: {
-      location: 'gurgaon',
-      state: 'haryana',
-    },
-    emails: ['abc@gmail.com', 'efg@yahoo.com', 'ghj@outlook.com']
-
-  }
-]
-
-// const newArr = facebookProfiles.filter(profile => profile.address.location === 'gurgaon').map(profile => profile.firstName + " " + profile.lastName);
-// console.log(newArr);
-
-const newArr = []
-for (const {firstName, lastName, address} of facebookProfiles){
-  if(address.location === 'gurgaon'){
-    newArr.push(firstName + " " + lastName);
+      let sorted =cityObjArray.sort(  function(a, b) { return a.temp - b.temp } )
+      // can pass cityObjArray also here as sort method does sorting on the same array(in place) and original array is replaced by the sorted one
+      //either ways both(sorted and cityObjArray) are referring to same array..assignment by reference is the default assignment in an array
+      console.log(sorted)
+      res.status(200).send({status: true,data: sorted}) // can pass cityObjArray also here as sort method does sorting on the same array(in place) and original array is replaced by the sorted one
+  } catch (error) {
+      console.log(error)
+      res.status(500).send({status: false, msg: "server error"})
   }
 }
-console.log(newArr);
