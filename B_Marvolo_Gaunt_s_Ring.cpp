@@ -1,27 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long int
-
 int main(){
     ll n, p, q, r;
     cin>>n>>p>>q>>r;
-    ll a[n];
-    for(ll i=0;i<n;i++){
-        cin>>a[i];
+    ll arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-    ll prefixMax[n] = {0}, suffixMax[n] = {0};
-    prefixMax[0] = a[0]*p;
-    suffixMax[n-1] = a[n-1]*r;
-    for(ll i=1;i<n;i++){
-        prefixMax[i] = max(prefixMax[i-1], a[i]*p);
+    ll pmax[n] = {LLONG_MIN}, smax[n] = {LLONG_MIN};
+    // Populate prefix max
+    pmax[0] = arr[0]*p;
+    for(int i=1;i<n;i++){
+        pmax[i] = max(arr[i]*p, pmax[i-1]);
     }
-    for(ll i=n-2;i>=0;i--){
-        suffixMax[i] = max(suffixMax[i+1], a[i]*r);
+    // Populate suffix max
+    smax[n-1] = arr[n-1]*r;
+    for(int i=n-2;i>=0;i--){
+        smax[i] = max(arr[i]*r, smax[i+1]);
     }
-    ll ans = LONG_MIN, x;
-    for(ll i=0;i<n;i++){
-        x = prefixMax[i] + (a[i]*q) + suffixMax[i];
-        ans = max(ans, x);
+    ll ans = LLONG_MIN;
+    for(int i = 0;i<n;i++){
+        ans = max(ans, pmax[i]+arr[i]*q+smax[i]);
     }
-    cout<<ans<<endl;
+    cout<<ans;
 }
