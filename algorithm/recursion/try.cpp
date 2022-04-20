@@ -7,16 +7,7 @@ using namespace std;
 
 bool isCheck(string tmp, char c)
 {
-    bool isCheck = false;
-    for (int i = tmp.length()-1; i >= 0; i--)
-    {
-        if (tmp[i] == c)
-        {
-            isCheck = true;
-            break;
-        }
-    }
-    return isCheck;
+    return tmp[tmp.length()-1==c];
 }
 
 void printAll(int n, int m, int numOfOpeningP, int numOfClosingP, int numOfOpeningB, int numOfClosingB, string tmp)
@@ -26,18 +17,19 @@ void printAll(int n, int m, int numOfOpeningP, int numOfClosingP, int numOfOpeni
         cout << tmp << endl;
         return;
     }
+    // cout<<tmp<<endl;
     if (numOfOpeningP > numOfClosingP)
     {
         if (numOfOpeningP < n)
         {
             printAll(n, m, numOfOpeningP + 1, numOfClosingP, numOfOpeningB, numOfClosingB, tmp + "{");
         }
-        if (!isCheck(tmp, '('))
+        if (isCheck(tmp, '{'))
         {
             printAll(n, m, numOfOpeningP, numOfClosingP + 1, numOfOpeningB, numOfClosingB, tmp + "}");
         }
     }
-    if (numOfOpeningP == numOfClosingP)
+    else if (numOfOpeningP == numOfClosingP)
     {
         if (numOfOpeningP < n)
         {
@@ -50,12 +42,12 @@ void printAll(int n, int m, int numOfOpeningP, int numOfClosingP, int numOfOpeni
         {
             printAll(n, m, numOfOpeningP, numOfClosingP, numOfOpeningB + 1, numOfClosingB, tmp + "(");
         }
-        if (!isCheck(tmp, '{'))
+        if (isCheck(tmp, '('))
         {
             printAll(n, m, numOfOpeningP, numOfClosingP, numOfOpeningB, numOfClosingB + 1, tmp + ")");
         }
     }
-    if (numOfOpeningB == numOfClosingB)
+    else if (numOfOpeningB == numOfClosingB)
     {
         if (numOfOpeningB < m)
         {
