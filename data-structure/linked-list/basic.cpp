@@ -47,8 +47,26 @@ node* mid(node *head){
     return curr;
 }
 
-node* deleteNthNode(node *head){
+// node* deleteNthNode(node *head){
     
+// }
+
+node* kreverse(node *head, int k){
+    
+}
+
+node* reverseRecursively(node* head){
+    if(!head || !head->next){
+        return head;
+    }
+    // Delinking
+    node* tmp = head->next;
+    head->next = nullptr;
+    // Recursive Call
+    node* newHead = reverseRecursively(tmp);
+    // linking
+    tmp->next = head;
+    return newHead;
 }
 
 int main(){
@@ -68,11 +86,26 @@ int main(){
             tail = tmp;
         }
     }
+    // tmp = head;
+    // cout<<endl;
+    // // cout<<"Mid: "<<mid(head)->data<<endl;
+    // while(tmp){
+    //     cout<<tmp->data<<" ";
+    //     tmp = tmp->next;
+    // }
+    // cout<<endl;
+    // tmp = head;
+    // tmp = reverseRecursively(tmp);
+    // while(tmp){
+    //     cout<<tmp->data<<" ";
+    //     tmp = tmp->next;
+    // }
+    // find tail
     tmp = head;
-    cout<<endl;
-    cout<<"Mid: "<<mid(head)->data<<endl;
-    while(tmp){
-        cout<<tmp->data<<" ";
+    node* last = tmp;
+    while(tmp && tmp->next){
         tmp = tmp->next;
+        last = last->next;
     }
+    cout<<last->data;
 }
