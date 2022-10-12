@@ -1,7 +1,10 @@
-#DSA problem collection
-Directory structure
-	---Data-Structure
-		All DSA topics folder wise
-	---Algorithms
-		All Algorithm topics folder wise
+# Interview Help
+
+I have tried collecting all the resource for DSA interview here in this repo.
+
+## Algorithm Problems
+## Data Structure Problems
+## Books
+## Important links
+	
 
