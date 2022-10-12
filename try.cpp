@@ -1,23 +1,33 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+
+void print(int **arr, int m, int n)
+{
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
     int m, n;
-    cin>>m>>n;
-    // Creation of 2d array
+    cin >> m >> n;
+    // m = number of rows, n = number of columns
+    // Pointer to pointer
     int **arr;
-    arr = new int*[m];
-    for(int i = 0;i<m;i++){
-        arr[i] = new int[n];
+    arr = new int *[m];
+    for (int i = 0; i < m; i++)
+    {
+        // arr[i] = new int[n];
+        // for (int j = 0; j < n; j++)
+        // {
+        //     cin >> arr[i][j];
+        // }
     }
-    for(int i = 0;i<m;i++){
-        for(int j = 0;j<n;j++){
-            arr[i][j] = 10;
-        }
-    }    
-    for(int i = 0;i<m;i++){
-        for(int j = 0;j<n;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    // print(arr, m, n);
 }
