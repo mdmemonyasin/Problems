@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Example of Double pointer with matrix
 void print(int **arr, int m, int n)
 {
     for (int i = 0; i < m; i++)
