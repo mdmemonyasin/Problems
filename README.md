@@ -1,6 +1,6 @@
 # Interview Help
 
-I have tried collecting all the resource for DSA interview here in this repo.
+Collection of Coding code solutions, books and other resources.
 
 ## Algorithm Problems
     Searching
