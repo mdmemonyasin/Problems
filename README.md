@@ -7,7 +7,11 @@ I have tried collecting all the resource for DSA interview here in this repo.
     Sorting
     Two Pointers
 ## Data Structure Problems
-    Data Structures problems added here.
+    Array
+    Stacks
+    Queue
+    Tree
+    BST
 ## Books
     Books related to programming added here.
 ## Important links
