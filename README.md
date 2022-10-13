@@ -3,7 +3,9 @@
 I have tried collecting all the resource for DSA interview here in this repo.
 
 ## Algorithm Problems
-    Algorith problems added here.
+    Searching
+    Sorting
+    Two Pointers
 ## Data Structure Problems
     Data Structures problems added here.
 ## Books
