@@ -15,7 +15,7 @@ Collection of Coding code solutions, books and other resources.
 ## Books
     Books related to programming added here.
 ## Important links
-    Important links related to programming added here.
+    Strivers SDE sheet link
 
 ## Strivers a2j course sheet
     We will be adding problem solutions from strivers sde sheet here in this folder.
